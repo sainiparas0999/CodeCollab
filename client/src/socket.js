@@ -7,5 +7,5 @@ export const initSocket = async () => {
         timeout: 10000,
         transports: ['websocket'],
     };
-    return io("https://code-collab-server.vercel.app/", options);  
+    return io("http://localhost:3000", options);  
 };
