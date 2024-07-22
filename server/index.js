@@ -7,14 +7,14 @@ const app = express() ;
 const port = 3000 ;
 
 app.get("/" , (req , res) => {
-    res.send("Hello webSocket")
+    res.send("Hello webSocket" , port)
 })
 
 
 const server = createServer(app)
 const io = new Server(server , {
     cors:{
-        origin:"https://code-collab-client.vercel.app/",
+        origin:"http://localhost:5173",
         methods:["Get" , "Post"] ,
         credentials: true ,
     }
@@ -23,7 +23,7 @@ const io = new Server(server , {
 
 app.use(
      cors({
-        origin:"https://code-collab-client.vercel.app/",
+        origin:"http://localhost:5173",
         methods:["Get" , "Post"] ,
         credentials: true ,
     })
